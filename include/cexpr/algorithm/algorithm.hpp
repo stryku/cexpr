@@ -15,10 +15,16 @@ namespace cexpr
     template <typename T, size_t N>
     constexpr array<T, N> sort(array<T, N> array)
     {
-        cexpr::array::array<T, N> sorted = array;
+        cexpr::array<T, N> sorted = array;
 
         detail::sort(sorted, 0, N);
 
         return sorted;
+    }
+
+    template <typename T, size_t N>
+    constexpr size_t binary_search(const array<T, N>& array, const T& value)
+    {
+        return detail::binary_search(array, value);
     }
 }

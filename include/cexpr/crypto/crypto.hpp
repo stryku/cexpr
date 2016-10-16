@@ -11,4 +11,9 @@ namespace cexpr
     {
         return detail::hash(begin, end);
     }
+
+    constexpr detail::hash_t hash(const char* str)
+    {
+        return detail::hash(str);
+    }
 }

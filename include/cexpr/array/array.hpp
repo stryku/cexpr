@@ -10,11 +10,6 @@ namespace cexpr
             return arr[i];
         }
 
-        constexpr const T& operator[](size_t i) const
-        {
-            return arr[i];
-        }
-
         constexpr T* begin()
         {
             return arr;

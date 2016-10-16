@@ -31,5 +31,27 @@ namespace cexpr
                 sort(array, m + 1, right);
             }
         }
+
+        template <typename T, size_t N>
+        constexpr size_t binary_search(const array<T, N>& array, const T& value)
+        {
+            size_t left{ 0 };
+            size_t right{ N - 1 };
+            size_t mid;
+
+            while (left <= right)
+            {
+                mid = (left + right) / 2;
+
+                if (value == array[mid])
+                    return mid;
+                else if (value > array[mid])
+                    left = mid + 1;
+                else
+                    right = mid - 1;
+            }
+
+            return -1;
+        }
     }
 }
